@@ -22,3 +22,4 @@ Route::post('password/reset', 'Auth\ResetPasswordController@reset');
 Route::get('/', 'HomeController@indexFront')->name('index');
 
 Route::get('/users', 'UsersController@index')->name('users.index');
+Route::get('/users/{id}', 'UsersController@show')->name('users.show');

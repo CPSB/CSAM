@@ -2,9 +2,19 @@
 
 @section('content')
     <div class="container">
+        @include('flash::message') {{-- Instantie voor de flash session berichten. --}}
+
         <div class="row">
             <div class="col-md-9"> {{-- Content --}}
                 <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <span class="fa fa-users" aria-hidden="true"></span> Gebruikersbeheer
+
+                        <button class="pull-right btn btn-xs btn-primary">
+                            <span class="fa fa-plus" aria-hidden="true"></span> Gebruiker toevoegen
+                        </button>
+                    </div>
+
                     <div class="panel-body">
                         @if (count($users) > 0) {{-- Gebruikers gevonden  --}}
                             <table class="table table-condensed table-hover">
@@ -26,8 +36,10 @@
                                             <td>{{ $user->email }}</td>
                                             <td>{{ $user->created_at }}</td>
 
-                                            <td class="text-center"> {{-- Gebruikers opties --}}
-                                                {{-- TODO: #3 Implementatie view voor de weergave van gebruikers --}}
+                                            <td class="pull-right"> {{-- Gebruikers opties --}}
+                                                <a href="{{ route('users.show', $user) }}" class="label label-info">
+                                                    Bekijk
+                                                </a>
                                             </td> {{-- /Gebruikers opties --}}
                                         </tr>
                                     @endforeach
