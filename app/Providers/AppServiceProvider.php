@@ -1,9 +1,15 @@
 <?php
 
-namespace App\Providers;
+namespace ActivismeBE\Providers;
 
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 
+/**
+ * Class AppServiceProvider
+ *
+ * @package ActivismeBE\Providers
+ */
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -13,7 +19,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        Schema::defaultStringLength(191);
     }
 
     /**
