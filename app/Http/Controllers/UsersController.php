@@ -37,4 +37,15 @@ class UsersController extends Controller
             'users' => $this->usersRepository->paginate(25)
         ]);
     }
+
+    /**
+     * Geef een specifieke gebruiker weer in het systeem.
+     *
+     * @param  integer $userId The unique identifier in the database.
+     * @return \Illuminate\Contracts\View\Factory|View
+     */
+    public function show($userId): View
+    {
+        return view();
+    }
 }
